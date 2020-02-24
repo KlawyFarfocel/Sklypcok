@@ -1,1 +1,13 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+.dropdown-menu {
+  border: 1px black solid;
+  border-radius: 20px 0px 20px 20px;
+  -webkit-transform: translate3d(5px, 6px, 0px) !important;
+          transform: translate3d(5px, 6px, 0px) !important;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    border-radius: 0px 20px 20px 20px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
