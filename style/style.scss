@@ -2,7 +2,21 @@
     border: 1px black solid;
     border-radius: 20px 0px 20px 20px;
     transform: translate3d(5px, 6px, 0px)!important;
+    input{
+        border-radius: 20px 0px 20px 20px;
+    }
+}
+.dropdown-item{
+    border-radius: 20px 0px 20px 20px;
 }
 @media(max-width:768px){
-    .dropdown-menu{border-radius: 0px 20px 20px 20px;}
+    .dropdown-menu{
+        border-radius: 0px 20px 20px 20px;
+        input{
+            border-radius: 0px 0px 0px 20px; 
+        }
+    }
+    .dropdown-item{
+        border-radius: 20px 20px 20px 20px; 
+    }
 }
