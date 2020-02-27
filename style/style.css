@@ -19,12 +19,26 @@ a {
 
 .dropdown-item {
   border-radius: 20px 0px 20px 20px;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(white)) content-box;
+  background: linear-gradient(white, white) content-box;
 }
 
 .dropdown-item:hover {
-  text-shadow: #474747 5px 5px 5px;
-  background: white;
   color: black;
+  -webkit-animation: forwards reSize 0.15s;
+          animation: forwards reSize 0.15s;
+}
+
+@-webkit-keyframes reSize {
+  to {
+    font-size: 1.25em;
+  }
+}
+
+@keyframes reSize {
+  to {
+    font-size: 1.25em;
+  }
 }
 
 @media (max-width: 992px) {

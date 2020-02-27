@@ -1,4 +1,6 @@
+@import "zmienne";
 // Wszystko odnośnie dropdownów
+
 .dropdown-menu{
     background-image: linear-gradient(white, white), radial-gradient(circle at top left, rgb(0, 199, 145) 20%, #3f87d9);
     background-origin: border-box;
@@ -15,10 +17,10 @@ a{
 }
 .dropdown-item{
     border-radius: 20px 0px 20px 20px;
+    background: linear-gradient(white, white) content-box;
     &:hover{
-        text-shadow: #474747 5px 5px 5px;
-        background: white;
         color: black;
+        @include reSize(1.25em,0.15s);
     }
 }
 @media(max-width:992px){

@@ -1,2 +1,2 @@
 # Sklypcok
-Dorobić animacje na hoverze przycisków
+Naprawić animacje tekstow
