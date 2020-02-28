@@ -1,6 +1,0 @@
-@mixin reSize($size,$duration){
-    @keyframes reSize{
-        to{font-size:$size}
-    }
-    animation: forwards reSize $duration;
-}

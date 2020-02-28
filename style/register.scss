@@ -1,0 +1,24 @@
+.txt{
+    h2{
+        font-size: 2.5rem;
+        margin: 1.5vh 0px 25px 0;
+    }
+    p{
+        font-size: 1.15rem;
+    }
+}
+.form-submit{
+    margin-top: 4vh;
+}
+.test{
+    border-left: 1px black solid;
+}
+.margin{
+    margin-top: 20%;
+}
+ .form-control:focus,
+ .form-control:hover{
+    border: 1px solid black;
+     border-bottom: 2px solid rgba(0, 0, 0,1);
+     box-shadow: none;
+}

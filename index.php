@@ -42,7 +42,7 @@
                                 <p> Nie masz konta? Zarejestruj się! </p>
                             </div>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Rejestracja</a>
+                            <a class="dropdown-item" href="register.php">Rejestracja</a>
                         </div>
                     </div>
                     <div class="dropdown mx-4 d-xs-flex d-lg-none">
