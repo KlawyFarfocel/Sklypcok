@@ -31,19 +31,23 @@
                         <label>Login</label>
                         <i class="fas fa-info-circle" data-trigger="hover" data-toggle="popover" data-content="8-15 znaków, bez znaków specjalnych"></i>
                         <input type="text" required name="login" class="form-control">
+                        <p class="d-none"></p>
                     </div>
                     <div class="form-group">
                         <label>E-Mail</label>
                         <input type="email" class="form-control" required name="mail" class="form-control">
+                        <p class="d-none"></p>
                     </div>
                     <div class="form-group">
                         <label>Hasło</label>
                         <i class="fas fa-info-circle" data-trigger="hover" data-toggle="popover" data-content="Przynajmniej 8 znaków, wielka, mała litera i znak specjalny"></i>
                         <input type="passowrd" required name="passwd" class="form-control">
+                        <p class="d-none"></p>
                     </div>
                     <div class="form-group invalid"> 
                         <label>Powtórz hasło</label> 
                         <input type="password" required name="passAgain" class="form-control">
+                        <p class="d-none"></p>
                     </div>
                     <div class="form-group form-submit text-center">
                         <input type="submit" id="chk" value="Utwórz konto" class="btn btn-block btn-outline-success">

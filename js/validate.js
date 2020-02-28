@@ -39,19 +39,35 @@ function validateRegister(){
     }
     var result=validateLogin(form[0]);
     if(result==false){
-        validColor(0)
+        validColor(0);
+        var p=$('.form-group p')[0];
+        p.classList="d-block";
+        p.style.color="red";
+        p.innerText="Błędny login. Spróbuj ponownie";
     }
     result=validatePass(form[2]);
     if(result==false){
         validColor(2);
+        var p=$('.form-group p')[2];
+        p.classList="d-block";
+        p.style.color="red";
+        p.innerText="Hasło niezgodne ze wzorcem. Spróbuj ponownie";
     }
     result=chkPass(form[2],form[3]);
     if(result==false){
         validColor(3);
+        var p=$('.form-group p')[3];
+        p.classList="d-block";
+        p.style.color="red";
+        p.innerText="Hasła się nie zgadzają. Spróbuj ponownie";
     }
     result=validateMail(form[1]);
     if(result==false){
         validColor(1);
+        var p=$('.form-group p')[1];
+        p.classList="d-block";
+        p.style.color="red";
+        p.innerText="E-mail niezgodny ze wzorcem. Spróbuj ponownie";
     }
 
 }
