@@ -15,7 +15,7 @@ function validatePass(pass){
     }
 }
 function chkPass(old,nova){
-    if(old.valu!=nova.value){ 
+    if(old.value!=nova.value){ 
         passFlag=false;
         return false;
     }
@@ -29,7 +29,6 @@ function validateMail(mail){
 }
 $('#chk').click(validateRegister);
 function validateRegister(){
-    event.preventDefault();
     var form=$('.form-control');
     function validColor(number){
         var label=$('.form-group label')[number];
@@ -69,5 +68,7 @@ function validateRegister(){
         p.style.color="red";
         p.innerText="E-mail niezgodny ze wzorcem. Spróbuj ponownie";
     }
-
+    if(passFlag==false){
+            event.preventDefault();
+    }
 }

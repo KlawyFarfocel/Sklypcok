@@ -19,6 +19,10 @@
   margin-top: 20%;
 }
 
+.margin3 {
+  margin-top: 10%;
+}
+
 .form-control:focus,
 .form-control:hover {
   border: 1px solid black;
