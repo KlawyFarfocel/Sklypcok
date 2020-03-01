@@ -42,7 +42,7 @@ function validateRegister(){
         var p=$('.form-group p')[0];
         p.classList="d-block";
         p.style.color="red";
-        p.innerText="Błędny login. Spróbuj ponownie";
+        p.innerText="Login niezgodny ze wzorcem. Spróbuj ponownie";
     }
     result=validatePass(form[2]);
     if(result==false){
@@ -69,6 +69,6 @@ function validateRegister(){
         p.innerText="E-mail niezgodny ze wzorcem. Spróbuj ponownie";
     }
     if(passFlag==false){
-            event.preventDefault();
+        event.preventDefault();
     }
 }

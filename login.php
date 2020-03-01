@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-group form-submit text-center">
                         <input type="submit" id="loginChk" value="Zaloguj się" class="btn btn-block btn-outline-success">
-                        <input type="hidden" name="mode" value="registered">
+                        <input type="hidden" name="mode" value="logged">
                     </div>   
                 </form>
             </div>
@@ -54,15 +54,6 @@
             </div>
         </div>
     </div>
-    <?php
-        $connect=new mysqli('localhost','root','','projektms');
-        if(isset($_POST['mode'])){
-            if($_POST['mode']=='registered'){
-                $login=$_POST['login']
-                $passwd=$_POST['passwd'];
-            }
-        }
-    ?>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -73,5 +64,17 @@
             $('[data-toggle="popover"]').popover();
         });
     </script>
+        <?php
+        $connect=new mysqli('localhost','root','','projektms');
+        if(isset($_POST['mode'])){
+            if($_POST['mode']=='logged'){
+                $login=$_POST['login'];
+                $passwd=$_POST['passwd'];
+                $search_query="SELECT * FROM users WHERE logon='$login' AND passwd='$passwd'";
+                $search_result=$connect->query($search_query);
+                //Ogarnąć sesje
+            }
+        }
+    ?>
 </body>
 </html>

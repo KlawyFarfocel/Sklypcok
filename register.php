@@ -10,6 +10,9 @@
     <title>Hello, world!</title>
   </head>
 <body>
+<?php
+    $connect=new mysqli('localhost','root','','projektms');
+?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a href="#" class="mx-auto navbar-brand d-xs-block d-lg-none">Navbar</a>
         <a class="navbar-brand d-none d-lg-block mx-auto" href="#">Navbar</a>
@@ -26,8 +29,18 @@
         </div>
         <div class="row clearfix xxd">
             <div class="col-lg-6">
-                <form action="register.php" class="needs-validation" novalidate method="POST">
+                <form action="register.php" method="POST">
                     <div class="form-group">
+                        <?php
+                            if(isset($_GET['check'])){
+                                if($_GET['check']=='failed'){
+                                    echo "<p class='text-warning text-center d-block'>Takie konto już istnieje!</p>";
+                                }
+                                if($_GET['check']=='success'){
+                                    echo "<p class='text-success text-center d-block'>Konto zostało utworzone!</p>";
+                                }
+                            }
+                        ?>
                         <label>Login</label>
                         <i class="fas fa-info-circle" data-trigger="hover" data-toggle="popover" data-content="8-15 znaków, bez znaków specjalnych"></i>
                         <input type="text" required name="login" class="form-control">
@@ -76,6 +89,28 @@
             $('[data-toggle="popover"]').popover();
         });
     </script>
-
+    <?php
+        if(isset($_POST['mode'])){
+            if($_POST['mode']=="registered"){
+                $username=$_POST['login'];
+                $passwd=$_POST['passwd'];
+                $mail=$_POST['mail'];
+                $check_query="SELECT * FROM users WHERE logon='$username' AND mail='$mail'";
+                $check_result=$connect->query($check_query);
+                if($check_result->fetch_object()){
+                    echo<<<alias
+                    <script>window.location.href="register.php?check=failed"</script>
+                    alias;
+                }
+                else{
+                    $add_query="INSERT INTO users(logon,passwd,mail) VALUES ('$username','$passwd','$mail')";
+                    $add_result=$connect->query($add_query);
+                    echo<<<alias
+                    <script>window.location.href="register.php?check=success"</script>
+                    alias;
+                }
+            }
+        }
+    ?>
 </body>
 </html>
