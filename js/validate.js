@@ -1,14 +1,14 @@
 passFlag=true;
 function validateLogin(login){
     console.log(login);
-    var regEx=/^[a-zA-Z0-9]{8,15}$/;
+    var regEx=/^[a-zA-Z0-9ąĄćĆęĘłŁńŃóÓśŚźŹżŻ]{8,15}$/;
     if (regEx.test(login.value)!=true) {
         passFlag=false;
         return false;
     }
 }
 function validatePass(pass){
-    var regEx=/(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=~`|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/ ;
+    var regEx=/(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=~`|:;"'<>,./?])(?=.*[a-ząĄćĆęĘłŁńŃóÓśŚźŹżŻ])(?=(.*[A-ZąĄćĆęĘłŁńŃóÓśŚźŹżŻ]))(?=(.*)).{8,}/ ;
     if (regEx.test(pass.value)!=true) {
         passFlag=false;
         return false;

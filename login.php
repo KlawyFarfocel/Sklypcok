@@ -10,6 +10,10 @@
     <title>Hello, world!</title>
   </head>
 <body>
+<?php
+        $connect=new mysqli('localhost','root','','projektms');
+        session_start();
+?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a href="#" class="mx-auto navbar-brand d-xs-block d-lg-none">Navbar</a>
         <a class="navbar-brand d-none d-lg-block mx-auto" href="index.php">Navbar</a>
@@ -26,8 +30,15 @@
         </div>
         <div class="row clearfix mt-5">
             <div class="col-lg-6">
-                <form action="register.php" novalidate method="POST">
+                <form action="login.php" method="POST">
                     <div class="form-group">
+                    <?php
+                            if(isset($_GET['check'])){
+                                if($_GET['check']=='failed'){
+                                    echo "<p class='text-danger text-center d-block'>Błędne dane logowania!</p>";
+                                }
+                            }
+                        ?>
                         <label>Login</label>
                         <input type="text" required name="login" class="form-control">
                         <p class="d-none"></p>
@@ -65,16 +76,28 @@
         });
     </script>
         <?php
-        $connect=new mysqli('localhost','root','','projektms');
+        if(isset($_SESSION['user_id'])){
+            echo'<script>window.location.href="index.php"</script>';
+        }
         if(isset($_POST['mode'])){
             if($_POST['mode']=='logged'){
                 $login=$_POST['login'];
                 $passwd=$_POST['passwd'];
                 $search_query="SELECT * FROM users WHERE logon='$login' AND passwd='$passwd'";
                 $search_result=$connect->query($search_query);
-                //Ogarnąć sesje
+                if($d=$search_result->fetch_object()){
+                    $_SESSION['user_id']=$d->user_id;
+                    echo'<script>window.location.href="index.php"</script>';
+                }
+                else{
+                    echo<<<alias
+                    <script>window.location.href="login.php?check=failed"</script>
+                    alias;
+                }
             }
+
         }
+        $connect->close();
     ?>
 </body>
 </html>

@@ -12,6 +12,7 @@
 <body>
 <?php
     $connect=new mysqli('localhost','root','','projektms');
+    session_start();
 ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a href="#" class="mx-auto navbar-brand d-xs-block d-lg-none">Navbar</a>
@@ -34,7 +35,7 @@
                         <?php
                             if(isset($_GET['check'])){
                                 if($_GET['check']=='failed'){
-                                    echo "<p class='text-warning text-center d-block'>Takie konto już istnieje!</p>";
+                                    echo "<p class='text-danger text-center d-block'>Takie konto już istnieje!</p>";
                                 }
                                 if($_GET['check']=='success'){
                                     echo "<p class='text-success text-center d-block'>Konto zostało utworzone!</p>";
@@ -48,6 +49,7 @@
                     </div>
                     <div class="form-group">
                         <label>E-Mail</label>
+                        <i class="fas fa-info-circle" data-trigger="hover" data-toggle="popover" data-content="Przykład:  name@example.com"></i>
                         <input type="email" class="form-control" required name="mail" class="form-control">
                         <p class="d-none"></p>
                     </div>
@@ -57,7 +59,7 @@
                         <input type="password" required name="passwd" class="form-control">
                         <p class="d-none"></p>
                     </div>
-                    <div class="form-group invalid"> 
+                    <div class="form-group"> 
                         <label>Powtórz hasło</label> 
                         <input type="password" required name="passAgain" class="form-control">
                         <p class="d-none"></p>
@@ -90,10 +92,12 @@
         });
     </script>
     <?php
+            if(isset($_SESSION['user_id'])){
+                echo'<script>window.location.href="index.php"</script>';
+            }
         if(isset($_POST['mode'])){
             if($_POST['mode']=="registered"){
                 $username=$_POST['login'];
-                $passwd=$_POST['passwd'];
                 $mail=$_POST['mail'];
                 $check_query="SELECT * FROM users WHERE logon='$username' AND mail='$mail'";
                 $check_result=$connect->query($check_query);
@@ -103,6 +107,9 @@
                     alias;
                 }
                 else{
+                    $username=$_POST['login'];
+                    $passwd=$_POST['passwd'];
+                    $mail=$_POST['mail'];
                     $add_query="INSERT INTO users(logon,passwd,mail) VALUES ('$username','$passwd','$mail')";
                     $add_result=$connect->query($add_query);
                     echo<<<alias
@@ -111,6 +118,7 @@
                 }
             }
         }
+        $connect->close();
     ?>
 </body>
 </html>

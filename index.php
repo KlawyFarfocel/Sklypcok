@@ -9,6 +9,10 @@
     <title>Hello, world!</title>
   </head>
 <body>
+<?php 
+    $connect=new mysqli('localhost','root','','projektms');
+    session_start();
+?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler  navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse"> ☰ </button>
         <a href="#" class=" mx-auto navbar-brand d-xs-block d-lg-none">Navbar</a>
@@ -35,15 +39,35 @@
                 <li class="nav-item d-flex justify-content-center mt-3 mt-lg-0 ">
                     <div class="dropdown">
                         <a href="#" class="btn text btn-outline-success dropdown-toggle mx-sm-1 mx-lg-0" role="button" id="dropdownMenuLink" data-toggle="dropdown">Konto</a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#">Logowanie</a>
-                            <div class="dropdown-divider"></div>
-                            <div class="px-4 text-muted">
-                                <p> Nie masz konta? Zarejestruj się! </p>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="register.php">Rejestracja</a>
-                        </div>
+                        <?php
+                            if(isset($_GET['logout'])){
+                                unset($_SESSION['user_id']);
+                            }
+                            if(isset($_SESSION['user_id'])){
+                                echo<<<alias
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#">Jeden przycisk</a>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="index.php?logout">Wyloguj</a>
+                                </div>
+                                alias;
+                            }
+                            else{
+                                echo<<<alias
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="login.php">Logowanie</a>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="px-4 text-muted">
+                                        <p> Nie masz konta? Zarejestruj się! </p>
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="register.php">Rejestracja</a>
+                                </div>
+                                alias;
+                            }
+                            $connect->close();
+                        ?>
                     </div>
                     <div class="dropdown mx-4 d-xs-flex d-lg-none">
                         <a href="#" class="btn btn-outline-success dropdown-toggle mx-sm-1 mx-lg-0 " role="button" id="searchBar" data-toggle="dropdown">Szukaj</a>
