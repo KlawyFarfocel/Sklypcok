@@ -66,7 +66,7 @@
                         <input type="hidden" name="mode" value="registered">
                     </div>
                     <div class="form-group form-submit text-center">
-                        <input type="submit" id="chk" value="Utwórz konto" class="btn btn-block btn-outline-success">
+                        <input type="submit" id="chk" value="Utwórz konto" class="btn  btn-outline-success">
                     </div>   
                 </form>
             </div>

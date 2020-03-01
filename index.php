@@ -38,7 +38,7 @@
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item d-flex justify-content-center mt-3 mt-lg-0 ">
                     <div class="dropdown">
-                        <a href="#" class="btn text btn-outline-success dropdown-toggle mx-sm-1 mx-lg-0" role="button" id="dropdownMenuLink" data-toggle="dropdown">Konto</a>
+                        <a href="#" class="btn btn-block  text btn-outline-success dropdown-toggle mx-sm-1 mx-lg-0" role="button" id="dropdownMenuLink" data-toggle="dropdown">Konto</a>
                         <?php
                             if(isset($_GET['logout'])){
                                 unset($_SESSION['user_id']);
@@ -55,7 +55,7 @@
                             }
                             else{
                                 echo<<<alias
-                                <div class="dropdown-menu dropdown-menu-right">
+                                <div class="dropdown-menu btn-block dropdown-menu-right">
                                     <a class="dropdown-item" href="login.php">Logowanie</a>
                                     <div class="dropdown-divider"></div>
                                     <div class="px-4 text-muted">
@@ -70,7 +70,7 @@
                         ?>
                     </div>
                     <div class="dropdown mx-4 d-xs-flex d-lg-none">
-                        <a href="#" class="btn btn-outline-success dropdown-toggle mx-sm-1 mx-lg-0 " role="button" id="searchBar" data-toggle="dropdown">Szukaj</a>
+                        <a href="#" class="btn btn-block btn-outline-success dropdown-toggle mx-sm-1 mx-lg-0 " role="button" id="searchBar" data-toggle="dropdown">Szukaj</a>
                         <div class="dropdown-menu dropdown-login dropdown-menu-right">
                             <form action="index.php" class="d-flex justify-content-center form-inline" method="get">
                                 <input class="form-control w-50" type="search" placeholder="Szukaj">
