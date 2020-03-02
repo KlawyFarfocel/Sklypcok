@@ -15,7 +15,7 @@
 ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler  navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse"> ☰ </button>
-        <a href="#" class=" mx-auto navbar-brand d-xs-block d-lg-none">Navbar</a>
+        <a href="index.php" class=" mx-auto navbar-brand d-xs-block d-lg-none">Navbar</a>
         <span class="mr-5 mr-lg-0"></span>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav ml-1">
@@ -27,7 +27,7 @@
                 </li>
             </ul>
         </div>
-        <a class="navbar-brand d-none d-lg-block mx-auto" href="#">
+        <a class="navbar-brand d-none d-lg-block mx-auto" href="index.php">
             <span class="mr-md-5">
                 <span class="mr-md-5">Navbar</span>
                 <span class="mr-md-5"></span>

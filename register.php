@@ -15,8 +15,8 @@
     session_start();
 ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a href="#" class="mx-auto navbar-brand d-xs-block d-lg-none">Navbar</a>
-        <a class="navbar-brand d-none d-lg-block mx-auto" href="#">Navbar</a>
+        <a href="index.php" class="mx-auto navbar-brand d-xs-block d-lg-none">Navbar</a>
+        <a class="navbar-brand d-none d-lg-block mx-auto" href="index.php">Navbar</a>
     </nav>
     <div class="container">
         <div class="row">
@@ -24,7 +24,7 @@
                 <div class="txt text-center">
                     <h2>Zarejestruj się!</h2>
                     <p class="text-muted d-none d-lg-block">Posiadanie konta umożliwia lepsze doświadczenie w korzystaniu z serwisu</p>
-                    <p class="text-muted d-block d-lg-none">Masz już konto? Zaloguj się! <a href="#">tutaj</a></p>
+                    <p class="text-muted d-block d-lg-none">Masz już konto? Zaloguj się! <a href="register.php">tutaj</a></p>
                 </div>
             </div>
         </div>
