@@ -46,8 +46,7 @@
                             if(isset($_SESSION['user_id'])){
                                 echo<<<alias
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#">Jeden przycisk</a>
-                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="account.php">Dane konta</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="index.php?logout">Wyloguj</a>
                                 </div>

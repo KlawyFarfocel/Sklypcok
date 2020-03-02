@@ -29,6 +29,7 @@ function validateMail(mail){
 }
 $('#chk').click(validateRegister);
 function validateRegister(){
+    passFlag=true;
     var form=$('.form-control');
     function validColor(number){
         var label=$('.form-group label')[number];
