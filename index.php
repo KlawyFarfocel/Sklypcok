@@ -54,6 +54,7 @@
                                             <div class="dropdown-divider"></div>
                                         alias;
                                             if($admin->admin==1){
+                                                $_SESSION['isAdmin']=true;
                                             echo<<<alias
                                                 <a class="dropdown-item" href="account.php">Panel administracyjny</a>
                                                 <div class="dropdown-divider"></div>
