@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="txt text-center mt-5">
-                    <h2>Zarejestruj się!</h2>
+                    <h2>Zaloguj się!</h2>
                     <p class="text-muted d-none d-lg-block">Zalogowanie zapewnia dostęp do funkcji niedostępnych dla użytkowników niezalogowanych</p>
                     <p class="text-muted d-block d-lg-none">Nie masz konta? Zarejestruj się <a href="register.php">tutaj!</a></p>
                 </div>
