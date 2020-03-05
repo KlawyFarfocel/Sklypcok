@@ -52,6 +52,14 @@
                                         <div class="dropdown-menu dropdown-menu-right">
                                             <a class="dropdown-item" href="account.php">Dane konta</a>
                                             <div class="dropdown-divider"></div>
+                                        alias;
+                                            if($admin->admin==1){
+                                            echo<<<alias
+                                                <a class="dropdown-item" href="account.php">Panel administracyjny</a>
+                                                <div class="dropdown-divider"></div>
+                                                alias;
+                                            }
+                                            echo<<<alias
                                             <a class="dropdown-item" href="index.php?logout">Wyloguj</a>
                                         </div>
                                         alias;
