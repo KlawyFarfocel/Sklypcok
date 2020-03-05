@@ -56,11 +56,11 @@
             </div>
             <div class="col-lg-5 offset-lg-1 test d-none d-lg-block">
                     <div class="txt text-center margin3">
-                        <p class="text-muted">Masz już konto?</p>
-                        <p class="text-muted">Zaloguj się!</p>
+                        <p class="text-muted">Nie masz konta?</p>
+                        <p class="text-muted">Zarejestruj się!</p>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-outline-success">Logowanie</button>
+                    <a class="btn btn-outline-success" href="register.php">Rejestracja</a>
                     </div>
             </div>
         </div>

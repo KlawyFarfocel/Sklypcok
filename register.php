@@ -72,7 +72,7 @@
             </div>
             <div class="col-lg-5 offset-lg-1 test d-none d-lg-block">
                     <div class="txt text-center margin">
-                        <p class="text-muted">Masz już konto?</p>
+                        <p class="text-muted">Nie masz konta?</p>
                         <p class="text-muted">Zaloguj się!</p>
                     </div>
                     <div class="text-center">
