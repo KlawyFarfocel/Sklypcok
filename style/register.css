@@ -30,4 +30,30 @@
   -webkit-box-shadow: none;
           box-shadow: none;
 }
+
+@-webkit-keyframes expand {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes expand {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: #363636;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-animation: expand 1s ease-in-out;
+          animation: expand 1s ease-in-out;
+}
 /*# sourceMappingURL=register.css.map */

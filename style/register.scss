@@ -25,3 +25,17 @@
      border-bottom: 2px solid rgba(0, 0, 0,1);
      box-shadow: none;
 }
+@keyframes expand{
+    from{
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+.dot{
+    height: 15px;
+    width: 15px;
+    background-color: #363636;
+    border-radius: 50%;
+    display: inline-block;
+    animation: expand 1s ease-in-out;
+}

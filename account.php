@@ -148,6 +148,11 @@
                         <input type="hidden" name="mode" value="success">
                         <div class="form-group col-10 offset-1 offset-md-2 col-md-8 text-center">
                               <input type="submit" id="chkAcc" value="Zapisz zmiany" class="btn btn-outline-success">
+                              <?php
+                                $href="seeyou.php?delete=".$_SESSION['user_id'];
+                                echo
+                                "<a href='$href' class='btn btn-outline-danger'>Usuń konto</a>"
+                              ?>
                         </div>  
                     </div>  
                         
