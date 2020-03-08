@@ -16,7 +16,7 @@
             $id=$_SESSION['user_id'];
             $query="SELECT name FROM users WHERE user_id='$id'";
             $result=$connect->query($query);
-            $who;
+            $who="";
             if($result->num_rows!=0){
                 $name=$result->fetch_object();
                 $who=$name->name;
