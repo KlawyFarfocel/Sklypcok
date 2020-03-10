@@ -1,2 +1,3 @@
 # Sklypcok
-Naprawić animacje tekstow
+Dodać modala do usuwania
+Panel administracyjny
