@@ -88,6 +88,7 @@
                 $search_result=$connect->query($search_query);
                 if($d=$search_result->fetch_object()){
                     $_SESSION['user_id']=$d->user_id;
+                    $_SESSION['admin']=$d->admin;
                     echo'<script>window.location.href="index.php"</script>';
                 }
                 else{
