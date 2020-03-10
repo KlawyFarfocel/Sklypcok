@@ -12,8 +12,9 @@
     session_start();
     error_reporting(0);
     $connect=new mysqli('localhost','root','','projektms');
-        if(isset($_GET['delete'])){
-            $id=$_SESSION['user_id'];
+
+            if(isset($_SESSION['delete'])){
+                $id=$_SESSION['user_id'];
             $query="SELECT name FROM users WHERE user_id='$id'";
             $result=$connect->query($query);
             $who="";
@@ -45,14 +46,14 @@
             $delete_query="DELETE FROM users WHERE user_id=$id";
             unset($_SESSION['user_id']);
             $delete_result=$connect->query($delete_query);
-        }
-        else{
-            echo<<<alias
-            <script>
-            window.location.href="index.php";
-            </script>
-            alias;
-        }
+            }
+            else{
+                echo<<<alias
+                <script>
+                window.location.href="index.php";
+                </script>
+                alias;
+            }
         $connect->close();
     ?>
     <script>

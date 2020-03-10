@@ -150,8 +150,9 @@
                               <input type="submit" id="chkAcc" value="Zapisz zmiany" class="btn btn-outline-success">
                               <?php
                                 $href="seeyou.php?delete=".$_SESSION['user_id'];
+                                $_SESSION['delete']='yas';
                                 echo
-                                "<a href='$href' class='btn btn-outline-danger'>Usuń konto</a>"
+                                "<a href='$href' class='btn btn-outline-danger'>Usuń konto</a>";
                               ?>
                         </div>  
                     </div>  
