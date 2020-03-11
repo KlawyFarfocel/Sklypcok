@@ -12,7 +12,6 @@
 <?php 
     $connect=new mysqli('localhost','root','','projektms');
     session_start();
-    unset($_SESSION['delete']);
 ?>
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
                 <button class="navbar-toggler  navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse"> ☰ </button>

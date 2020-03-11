@@ -148,17 +148,37 @@
                         <input type="hidden" name="mode" value="success">
                         <div class="form-group col-10 offset-1 offset-md-2 col-md-8 text-center">
                               <input type="submit" id="chkAcc" value="Zapisz zmiany" class="btn btn-outline-success">
-                              <?php
-                                $href="seeyou.php?delete=".$_SESSION['user_id'];
-                                $_SESSION['delete']='yas';
-                                echo
-                                "<a href='$href' class='btn btn-outline-danger'>Usuń konto</a>";
-                              ?>
+                              </form>
+                              <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#test">Usuń konto</button>
+                              <div class="modal fade" id="test" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title">Na pewno?</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="text-danger">Ten proces jest nieodwracalny!</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <form action="seeyou.php" method="post">
+                                        <div class="text-center">
+                                          <form action="seeyou.php" method="POST">
+                                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Anuluj</button>
+                                            <input type="submit" value="Usuń konto" class="btn btn-outline-danger">
+                                            <input type="hidden" name="deleted" value="yas">
+                                          </form>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                         </div>  
                     </div>  
-                        
                 </div>
-            </form>
+            
     </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

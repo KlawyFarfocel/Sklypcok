@@ -13,7 +13,7 @@
     error_reporting(0);
     $connect=new mysqli('localhost','root','','projektms');
 
-            if(isset($_SESSION['delete'])){
+            if(isset($_POST['deleted'])){
                 $id=$_SESSION['user_id'];
             $query="SELECT name FROM users WHERE user_id='$id'";
             $result=$connect->query($query);

@@ -13,7 +13,6 @@
 <?php
         $connect=new mysqli('localhost','root','','projektms');
         session_start();
-        unset($_SESSION['delete']);
 ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a href="#" class="mx-auto navbar-brand d-xs-block d-lg-none">Navbar</a>
