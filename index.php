@@ -9,10 +9,6 @@
     <title>Hello, world!</title>
   </head>
 <body>
-<?php 
-    $connect=new mysqli('localhost','root','','projektms');
-    session_start();
-?>
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
                 <button class="navbar-toggler  navbar-toggler-right" type="button" data-toggle="collapse" data-target=".navbar-collapse"> ☰ </button>
                 <a href="index.php" class=" mx-auto navbar-brand d-xs-block d-lg-none">Navbar</a>
@@ -40,7 +36,8 @@
                             <div class="dropdown">
                                 <a href="#" class="btn btn-block  text btn-outline-success dropdown-toggle mx-sm-1 mx-lg-0" role="button" id="dropdownMenuLink" data-toggle="dropdown">Konto</a>
                                 <?php
-                                    if(isset($_GET['logout'])){
+                                require_once('logme.php');
+                                if(isset($_GET['logout'])){
                                         unset($_SESSION['user_id']);
                                     }
                                     if(isset($_SESSION['user_id'])){

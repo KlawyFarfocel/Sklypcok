@@ -11,8 +11,7 @@
   </head>
 <body>
 <?php
-        $connect=new mysqli('localhost','root','','projektms');
-        session_start();
+        require_once('logme.php');
         if(is_null($_SESSION['user_id'])){
           echo<<<alias
           <script> window.location.href="index.php"</script>

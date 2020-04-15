@@ -10,10 +10,6 @@
     <title>Hello, world!</title>
   </head>
 <body>
-<?php
-        $connect=new mysqli('localhost','root','','projektms');
-        session_start();
-?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a href="#" class="mx-auto navbar-brand d-xs-block d-lg-none">Navbar</a>
         <a class="navbar-brand d-none d-lg-block mx-auto" href="index.php">Navbar</a>
@@ -33,6 +29,7 @@
                 <form action="login.php" method="POST">
                     <div class="form-group">
                     <?php
+                    require_once('logme.php');
                             if(isset($_GET['check'])){
                                 if($_GET['check']=='failed'){
                                     echo "<p class='text-danger text-center d-block'>Błędne dane logowania!</p>";

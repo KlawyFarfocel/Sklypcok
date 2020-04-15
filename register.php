@@ -10,10 +10,6 @@
     <title>Hello, world!</title>
   </head>
 <body>
-<?php
-    $connect=new mysqli('localhost','root','','projektms');
-    session_start();
-?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a href="index.php" class="mx-auto navbar-brand d-xs-block d-lg-none">Navbar</a>
         <a class="navbar-brand d-none d-lg-block mx-auto" href="index.php">Navbar</a>
@@ -92,6 +88,7 @@
         });
     </script>
     <?php
+    require_once('logme.php');
             if(isset($_SESSION['user_id'])){
                 echo'<script>window.location.href="index.php"</script>';
             }

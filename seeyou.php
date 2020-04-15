@@ -9,10 +9,8 @@
 </head>
 <body>
     <?php
-    session_start();
     error_reporting(0);
-    $connect=new mysqli('localhost','root','','projektms');
-
+    require_once('logme.php');
             if(isset($_POST['deleted'])){
                 $id=$_SESSION['user_id'];
             $query="SELECT name FROM users WHERE user_id='$id'";
